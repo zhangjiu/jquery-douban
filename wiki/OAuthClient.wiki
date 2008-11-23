@@ -14,7 +14,7 @@ var requestToken = service.getRequestToken();
 var authorizationUrl = service.getAuthorizationUrl(requestToken, 'http://blog.luliban.com');
 // 让用户去authorizationUrl页面进行认证。。。
 
-// 用已授权request token换取access token
+// 用已授权的request token换取access token
 var accessToken = service.getAccessToken(requestToken);
 
 // 用户已授权，弹出true
