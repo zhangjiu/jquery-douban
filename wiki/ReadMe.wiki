@@ -2,26 +2,30 @@
 #labels readme,Featured
 
 = 什么是jQuery Douban =
-jQuery Douban是封装豆瓣API的jQuery插件，提供授权认证，操作豆瓣数据等功能。
+jQuery Douban是一个封装了豆瓣API的jQuery插件，提供授权认证和操作豆瓣数据的功能。
 
 = 什么时候使用jQuery Douban =
-  * 获取或操作豆瓣广播，日记等资源的时候
+  * 你也使用jQuery
+  * 你希望在客户端调用豆瓣上的数据
+  * 你在编写豆瓣的GreaseMonkey脚本
 
 = 为什么不直接使用豆瓣API =
   * 更喜欢jQuery风格的代码
-  * 不愿人工处理诸如`{"$t":"9787543632608","@name":"isbn13"},`风格的JSON feed
+  * 不愿人工处理豆瓣返回的诸如`{"$t":"9787543632608","@name":"isbn13"}`风格的JSON
 
 = 怎样使用jQuery Douban =
-期望中应该是这样子的
+示范一个先
 {{{
 // 创建豆瓣服务实例
-var service = $.douban.create({ apiKey: "apiKey", apiSecret: "apiSecret" });
+var service = $.douban({ apiKey: "apiKey", apiSecret: "apiSecret" });
 // 登录豆瓣帐户
 var login = service.login("accessKey", "accessSecret");
 if (login) {
     // 添加一条广播
-    var id = service.miniblog.add("添加一条广播");
+    var miniblog = service.miniblog.add("添加一条广播");
+    // 弹出“添加成功：添加一条广播”
+    alert("添加成功：" + miniblog.content);
     // 删除一条广播
-    service.miniblog.delete(id);
+    service.miniblog.delete(miniblog);
 }
 }}}
