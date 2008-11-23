@@ -1,4 +1,4 @@
-#summary 豆瓣用户API的使用
+#summary 关于豆瓣用户API的使用
 #labels user,api
 
 = 介绍 =
