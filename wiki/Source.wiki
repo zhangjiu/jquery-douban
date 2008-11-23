@@ -2,15 +2,15 @@
 #labels source,git,github
 
 = 源代码 =
-版本管理使用Git，Repo架设在[http://github.com/ GitHub]：http://github.com/wuyuntao/jquery-douban/tree/master
+jquery-douban 使用 [http://github.com/ GitHub] 来版本管理，Repo URL：http://github.com/wuyuntao/jquery-douban/tree/master
 
 = 检出代码 =
-公共Clone URL: git://github.com/wuyuntao/jquery-douban.git
+公共 Clone URL: git://github.com/wuyuntao/jquery-douban.git
 {{{
 git clone git://github.com/wuyuntao/jquery-douban.git
 }}}
 
-私有Clone URL: git@github.com:wuyuntao/jquery-douban.git
+私有 Clone URL: git@github.com:wuyuntao/jquery-douban.git
 {{{
 git clone git@github.com:wuyuntao/jquery-douban.git
 }}}
