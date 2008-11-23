@@ -1,0 +1,27 @@
+#summary 关于豆瓣书影音API的使用
+#labels book,movie,music,api
+
+= 介绍 =
+豆瓣条目API的方法共有6个，书影音各2个
+|| get ||        获取条目信息 ||
+|| search ||     搜索条目 ||
+
+= 示例 =
+{{{
+// 初始化service
+var service = $.douban({ key: apiKey, secret: apiSecret });
+service.login({ key: accessKey, secret: accessSecret });
+
+// 获取书籍信息
+var book = service.book.get('1493316');
+// 弹出书名“交互设计之路”
+alert(book.title);
+
+// 搜索电影 'load'，返回前四个结果
+var query = service.movie.search('lord', 0, 4);
+// 弹出搜索结果数量 44
+alert(query.total);
+// 弹出第一个搜索结果的电影名
+alert(query.entries[0].title);
+}}}
+更多示例可以参考测试 [http://github.com/wuyuntao/jquery-douban/tree/master/tests%2Ftests.js test.js] 的 "test book api"部分
