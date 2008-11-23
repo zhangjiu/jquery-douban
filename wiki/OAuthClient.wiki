@@ -1,0 +1,19 @@
+#summary 关于豆瓣OAuth授权认证
+#labels Featured,oauth,client
+
+= 示例 =
+
+{{{
+// 初始化service
+var service = $.douban({ apiKey: 'blah', apiSecret: 'blah' });
+// 获取未授权的request token
+var requestToken = service.getRequestToken();
+// 用request token获取授权页面
+var authorizationUrl = service.getAuthorizationUrl(requestToken, 'http://blog.luliban.com');
+// 等待用户授权。。。
+
+// 用已授权request token换取access token
+var accessToken = service.getAccessToken(requestToken);
+// 用户已授权
+}}}
+
