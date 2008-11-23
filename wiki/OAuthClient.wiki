@@ -18,5 +18,5 @@ var authorizationUrl = service.getAuthorizationUrl(requestToken, 'http://blog.lu
 var accessToken = service.getAccessToken(requestToken);
 
 // 用户已授权，弹出true
-alert(service.login());
+alert(service.isAuthenticated());
 }}}
