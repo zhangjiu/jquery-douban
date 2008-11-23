@@ -19,7 +19,7 @@ jQuery Douban是一个封装了豆瓣API的jQuery插件，提供授权认证和�
 // 创建豆瓣服务实例
 var service = $.douban({ apiKey: "apiKey", apiSecret: "apiSecret" });
 // 登录豆瓣帐户
-var login = service.login("accessKey", "accessSecret");
+var login = service.login({ key: "accessKey", secret: "accessSecret"});
 if (login) {
     // 添加一条广播
     var miniblog = service.miniblog.add("添加一条广播");
