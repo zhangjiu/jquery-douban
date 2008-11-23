@@ -7,7 +7,7 @@ jQuery Douban是一个封装了豆瓣API的jQuery插件，提供授权认证和�
 = 什么时候使用jQuery Douban =
   * 你也使用jQuery
   * 你希望在客户端调用豆瓣上的数据
-  * 你在编写豆瓣的GreaseMonkey脚本
+  * 你正在编写豆瓣的GreaseMonkey脚本
 
 = 为什么不直接使用豆瓣API =
   * 更喜欢jQuery风格的代码
