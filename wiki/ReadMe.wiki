@@ -26,6 +26,6 @@ if (login) {
     // 弹出“添加成功：添加一条广播”
     alert("添加成功：" + miniblog.content);
     // 删除一条广播
-    service.miniblog.delete(miniblog);
+    service.miniblog.remove(miniblog);
 }
 }}}
