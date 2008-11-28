@@ -1,0 +1,56 @@
+#summary 关于豆瓣收藏API的使用
+#labels Collection,API
+
+= 介绍 =
+豆瓣的评论API共有6个，分别是
+|| get || 获取评论 || 
+|| getForUser || 获取用户的所有评论 ||
+|| getForSubject || 获取条目的相关评论 ||
+|| add ||            发表新评论 ||
+|| update ||         更新评论 ||
+|| remove  ||        删除评论 ||
+
+= 示例 =
+
+{{{
+// 初始化service
+var service = $.douban({ key: apiKey, secret: apiSecret });
+service.login({ key: accessKey, secret: accessSecret });
+
+// 获取某动画
+var anime = service.movie.get('3136367');
+
+// 获取该动画相关的评论
+var reviews = service.review.getForSubject(anime);
+
+// 弹出评论的总数为2
+alert(reviews.totol);
+
+// 为该动画写新的评论
+var newReview = service.review.add({
+    subject: anime.id,
+    title: "评论标题",
+    content: "内容要更长一些，否则不能发送成功",
+    rating: 5
+});
+
+// 弹出新评论的id
+alert(newReview.id);
+}}}
+
+更多示例可以参考测试 [http://github.com/wuyuntao/jquery-douban/tree/master/tests%2Ftests.js test.js] 的 "test review api"部分
+
+= 评论类 =
+上面的示例中，API返回的是一个评论类（Review）。它定义了豆瓣用户的档案，可以通过下面的命令创建，其中json为豆瓣返回的gdata json feed
+{{{
+var review = $.douban('review', json);
+}}}
+Review类有下面这些属性
+|| id ||             收藏ID ||
+|| title ||          收藏标题 ||
+|| author ||         收藏者，User object ||
+|| content ||        收藏评论 ||
+|| updated ||        收藏最近更新时间 ||
+|| status ||         收藏状态，查表可去：http://tinyurl.com/59rqm2 ||
+|| tags ||           收藏用TAG ||
+|| rating ||         收藏评分 ||
