@@ -38,6 +38,7 @@ alert(response);
 var note = $.douban('note', json);
 }}}
 Note类有下面这些属性
+|| all || 属性列表 ||
 || id ||             日记ID ||
 || title ||          日记标题 ||
 || author  ||        日记作者，User object ||
@@ -48,4 +49,3 @@ Note类有下面这些属性
 || url         ||    日记URL ||
 || isPublic      ||  是否公开 ||
 || isReplyEnabled  ||是否允许回复 ||
-|| createFromJson  ||由豆瓣返回的JSON，初始化数据 ||
