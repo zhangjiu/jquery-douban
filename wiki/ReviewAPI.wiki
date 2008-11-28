@@ -1,5 +1,5 @@
 #summary 关于豆瓣评论API的使用
-#labels Featured,评论,API
+#labels 评论,API
 
 = 介绍 =
 豆瓣的评论API共有6个，分别是
