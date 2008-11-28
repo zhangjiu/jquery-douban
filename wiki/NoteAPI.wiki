@@ -1,5 +1,5 @@
 #summary 关于豆瓣日记API的使用
-#labels 日记,API,Featured
+#labels 日记,API
 
 = 介绍 =
 日记API的方法有5个
