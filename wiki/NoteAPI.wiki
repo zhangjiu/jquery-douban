@@ -33,7 +33,7 @@ alert(response);
 更多示例可以参考测试 [http://github.com/wuyuntao/jquery-douban/tree/master/tests%2Ftests.js test.js] 的 "test note api"部分
 
 = 日记类 =
-上面的示例中，API返回的极为日记类（Note）。它定义了豆瓣日记的信息，可以通过下面的命令创建，其中json为豆瓣返回的gdata json feed
+上面的示例中，API返回的是一个日记类（Note）。它定义了豆瓣日记的信息，可以通过下面的命令创建，其中json为豆瓣返回的gdata json feed
 {{{
 var note = $.douban('note', json);
 }}}
