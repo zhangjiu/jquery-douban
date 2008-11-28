@@ -31,6 +31,7 @@ alert(ahbei.screenName);
 var user = $.douban('user', json);
 }}}
 User类有下面这些属性
+|| all || 属性列表 ||
 || id || 用户ID || 
 || userName || 用户名 || 
 || screenName || 昵称 || 
@@ -38,4 +39,4 @@ User类有下面这些属性
 || blog || 网志主页 || 
 || intro || 自我介绍 || 
 || url || 豆瓣主页 || 
-|| iamgeUrl || 头像 || 
+|| imageUrl || 头像 || 
