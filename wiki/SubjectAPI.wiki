@@ -1,5 +1,5 @@
 #summary 关于豆瓣书影音API的使用
-#labels 条目,书本,电影,音乐,API,Featured
+#labels 条目,书本,电影,音乐,API
 
 = 介绍 =
 豆瓣条目API的方法共有6个，书影音各2个
@@ -24,4 +24,4 @@ alert(query.total);
 // 弹出第一个搜索结果的电影名
 alert(query.entries[0].title);
 }}}
-更多示例可以参考测试 [http://github.com/wuyuntao/jquery-douban/tree/master/tests%2Ftests.js test.js] 的 "test book api"部分
+更多示例可以参考测试 [http://github.com/wuyuntao/jquery-douban/tree/master/tests%2Ftests.js tests.js] 的 "test book api"部分
