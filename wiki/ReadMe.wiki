@@ -2,7 +2,7 @@
 #labels Readme,Featured
 
 = 什么是jQuery Douban =
-jQuery Douban是一个封装了豆瓣API的jQuery插件，提供授权认证和操作豆瓣数据的功能。目前支持的API有用户、条目、收藏、评论、广播、日记、推荐和标签API，部分支持同城活动的API。
+jQuery Douban是一个简化豆瓣API开发的jQuery插件，提供授权认证和操作豆瓣数据的功能。目前支持的API有用户、条目、收藏、评论、广播、日记、推荐和标签API，部分支持同城活动的API。
 
 = 什么时候使用jQuery Douban =
   * 你也使用jQuery
