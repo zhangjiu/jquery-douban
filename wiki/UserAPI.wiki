@@ -1,5 +1,5 @@
 #summary 关于豆瓣用户API的使用
-#labels user,api
+#labels user,api,Featured
 
 = 介绍 =
 豆瓣的用户API共有5个，分别是
