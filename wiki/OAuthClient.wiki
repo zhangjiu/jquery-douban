@@ -1,5 +1,5 @@
 #summary 关于豆瓣OAuth授权认证
-#labels oauth,client,Featured
+#labels OAuth,Featured
 
 = 示例 =
 
