@@ -2,7 +2,7 @@
 #labels Collection,API
 
 = 介绍 =
-豆瓣的评论API共有6个，分别是
+豆瓣的收藏API共有5个，分别是
 || get ||            获取收藏信息 ||
 || getForUser ||     获取用户收藏信息 ||
 || add ||            添加收藏 ||
@@ -25,7 +25,7 @@ $.each(musicCollection, function() {
 });
 }}}
 
-更多示例可以参考测试 [http://github.com/wuyuntao/jquery-douban/tree/master/tests%2Ftests.js test.js] 的 "test collection api"部分
+更多示例可以参考测试 [http://github.com/wuyuntao/jquery-douban/tree/master/tests%2Ftests.js tests.js] 的 "test collection api"部分
 
 = 收藏类 =
 收藏类（Collection）定义了豆瓣用户的收藏信息，可以通过下面的命令创建，其中json为豆瓣返回的gdata json feed
