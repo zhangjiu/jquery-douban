@@ -1,5 +1,5 @@
 #summary 关于豆瓣书影音API的使用
-#labels subject,book,movie,music,api
+#labels subject,book,movie,music,api,Featured
 
 = 介绍 =
 豆瓣条目API的方法共有6个，书影音各2个
