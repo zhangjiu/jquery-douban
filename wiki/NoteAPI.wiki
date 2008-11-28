@@ -25,7 +25,7 @@ var note = service.note.add({
 alert(note.title)
 
 // 删除日记
-var response = service.note.remove(note3);
+var response = service.note.remove(note);
 
 // 弹出true
 alert(response);
