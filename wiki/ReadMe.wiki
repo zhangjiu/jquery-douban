@@ -2,19 +2,30 @@
 #labels Readme,Featured
 
 = 什么是jQuery Douban =
-jQuery Douban是一个封装了豆瓣API的jQuery插件，提供授权认证和操作豆瓣数据的功能。
+jQuery Douban是一个封装了豆瓣API的jQuery插件，提供授权认证和操作豆瓣数据的功能。目前支持的API有用户、条目、收藏、评论、广播、日记、推荐和标签API，部分支持同城活动的API。
 
 = 什么时候使用jQuery Douban =
   * 你也使用jQuery
-  * 你希望在客户端调用豆瓣上的数据
-  * 你正在编写豆瓣的GreaseMonkey脚本
+  * 你希望从客户端调用豆瓣API
+  * 或者你正在编写豆瓣的GreaseMonkey脚本
 
 = 为什么不直接使用豆瓣API =
   * 更喜欢jQuery风格的代码
   * 不愿人工处理豆瓣返回的诸如`{"$t":"9787543632608","@name":"isbn13"}`风格的JSON
 
 = 怎样使用jQuery Douban =
-示范一个先
+示范添加一条广播先。
+
+jquery-douban需要jquery，oauth和sha1三个js库的支持。先要导入这三个js文件。
+{{{
+<script type="text/javascript" src="/scripts/jquery.js" ></script>
+<script type="text/javascript" src="/scripts/sha1.js" ></script>
+<script type="text/javascript" src="/scripts/oauth.js" ></script>
+<script type="text/javascript" src="/scripts/jquery.douban.js" ></script>
+}}}
+
+然后就可以用jquery-douban添加广播了
+
 {{{
 // 创建豆瓣服务实例
 var service = $.douban({ key: "apiKey", secret: "apiSecret" });
@@ -28,4 +39,14 @@ if (login) {
     // 删除一条广播
     service.miniblog.remove(miniblog);
 }
+}}}
+
+= 哪里可以得到代码 =
+jquery-douban 使用 [http://github.com/ GitHub] 来版本管理，Repo URL：
+{{{
+http://github.com/wuyuntao/jquery-douban/tree/master
+}}}
+你可以用 Git 检出代码
+{{{
+git clone git://github.com/wuyuntao/jquery-douban.git
 }}}
