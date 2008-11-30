@@ -12,7 +12,7 @@
 var service = $.douban({ key: apiKey, secret: apiSecret });
 service.login({ key: accessKey, secret: accessSecret });
 
-// 获取海角七号的第7个标签
+// 获取海角七号的第6个标签
 tags = service.tag.getForSubject('http://api.douban.com/movie/subject/3158990', 5, 1);
 
 // 弹出范逸臣
