@@ -1,0 +1,50 @@
+#summary 关于豆瓣推荐API的使用
+#labels 推荐,API
+
+= 介绍 =
+推荐API的方法有7个
+|| get || 获取推荐 ||
+|| getForUser || 获取用户的所有推荐 ||
+|| add || 发表新推荐 ||
+|| remove || 删除推荐 ||
+|| getComment || 获取推荐回复 ||
+|| addComment || 发表新回复 ||
+|| removeComment || 删除回复 ||
+
+= 示例 =
+{{{
+// 初始化service
+var service = $.douban({ key: apiKey, secret: apiSecret });
+service.login({ key: accessKey, secret: accessSecret });
+
+// 添加新推荐
+var recommendation = service.recommendation.add({
+    title: 'jquery-douban',
+    url: '[http://jquery-douban.luliban.com/]',
+    comment: 'jquery douban插件'
+});
+
+// 弹出“http://jquery-douban.luliban.com/”
+alert(recommendation.url)
+
+// 删除推荐
+var response = service.recommendation.remove(recommendation);
+
+// 弹出true
+alert(response);
+}}}
+更多示例可以参考测试 [http://github.com/wuyuntao/jquery-douban/tree/master/tests%2Ftests.js test.js] 的 "test recommendation api"部分
+
+= 推荐类 =
+上面的示例中，API返回的是一个推荐类（Recommendation）。它定义了豆瓣推荐的信息，可以通过下面的命令创建，其中json为豆瓣返回的gdata json feed
+{{{
+var recommendation = $.douban('recommendation', json);
+}}}
+Recommendation类有下面这些属性
+|| all || 属性列表 ||
+|| id || 推荐ID ||
+|| title || 推荐标题 ||
+|| content || 推荐全文 ||
+|| published || 推荐发布时间 ||
+|| type || 类别 ||
+|| comment || 评论 ||
