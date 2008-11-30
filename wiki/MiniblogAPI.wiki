@@ -1,0 +1,46 @@
+#summary 关于豆瓣广播API的使用
+#labels 广播,API
+
+= 介绍 =
+广播API的方法有4个
+|| get ||        获取用户广播 ||
+|| getForContacts || 获取用户的友邻广播 ||
+|| add ||            发表新广播 ||
+|| remove  ||        删除广播 ||
+
+= 示例 =
+{{{
+// 初始化service
+var service = $.douban({ key: apiKey, secret: apiSecret });
+service.login({ key: accessKey, secret: accessSecret });
+
+// 添加新广播
+var miniblog = service.miniblog.add({
+    content: "没错，当时就是这样"
+});
+
+// 弹出“没错，当时就是这样”
+alert(miniblog.content)
+
+// 删除广播
+var response = service.miniblog.remove(miniblog);
+
+// 弹出true
+alert(response);
+}}}
+更多示例可以参考测试 [http://github.com/wuyuntao/jquery-douban/tree/master/tests%2Ftests.js test.js] 的 "test miniblog api"部分
+
+= 广播类 =
+上面的示例中，API返回的是一个广播类（Miniblog）。它定义了豆瓣广播的信息，可以通过下面的命令创建，其中json为豆瓣返回的gdata json feed
+{{{
+var miniblog = $.douban('miniblog', json);
+}}}
+Miniblog类有下面这些属性
+|| all || 属性列表 ||
+|| id ||             广播ID ||
+|| title ||          广播标题 ||
+|| content     ||    广播全文 ||
+|| published     ||  广播发布时间 ||
+|| cateogry   ||      广播的类别 ||
+|| type   ||      广播的子类别 ||
+|| imageUrl         ||    广播相关图片的URL ||
