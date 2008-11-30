@@ -43,6 +43,6 @@ Event类有下面这些属性
 || location || 活动城市 ||
 || address || 活动地点 ||
 || isInviteOnly || 是否只允许受邀请者参加 ||
-|| isInviteEnabled 是否能够邀请参加 ||
+|| isInviteEnabled || 是否能够邀请参加 ||
 || participants || 活动参与者数量 ||
 || wishers || 活动感兴趣者数量 ||
