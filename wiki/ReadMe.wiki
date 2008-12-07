@@ -32,7 +32,7 @@ var service = $.douban({ key: "apiKey", secret: "apiSecret" });
 var login = service.login({ key: "accessKey", secret: "accessSecret"});
 if (login) {
     // 添加一条广播
-    var miniblog = service.miniblog.add("添加一条广播");
+    var miniblog = service.miniblog.add({ content: "添加一条广播" });
     // 弹出“添加成功：添加一条广播”
     alert("添加成功：" + miniblog.content);
     // 删除一条广播
