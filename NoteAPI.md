@@ -1,0 +1,50 @@
+# 介绍 #
+日记API的方法有5个
+| get |        获取日记 |
+|:----|:--------------------|
+| getForUser | 获取用户的所有日记 |
+| add |            发表新日记 |
+| update |         更新日记 |
+| remove  |        删除日记 |
+
+# 示例 #
+```
+// 初始化service
+var service = $.douban({ key: apiKey, secret: apiSecret });
+service.login({ key: accessKey, secret: accessSecret });
+
+// 添加新日记
+var note = service.note.add({
+    title: "功能多不如MM多",
+    content: "没错，当时就是这样"
+});
+
+// 弹出“功能多不如MM多”
+alert(note.title)
+
+// 删除日记
+var response = service.note.remove(note);
+
+// 弹出true
+alert(response);
+```
+更多示例可以参考测试 [test.js](http://github.com/wuyuntao/jquery-douban/tree/master/tests%2Ftests.js) 的 "test note api"部分
+
+# 日记类 #
+上面的示例中，API返回的是一个日记类（Note）。它定义了豆瓣日记的信息，可以通过下面的命令创建，其中json为豆瓣返回的gdata json feed
+```
+var note = $.douban('note', json);
+```
+Note类有下面这些属性
+| all | 属性列表 |
+|:----|:-------------|
+| id |             日记ID |
+| title |          日记标题 |
+| author  |        日记作者，User object |
+| summary   |      日记摘要，如果设为全文输出，则和content相同 |
+| content     |    日记全文 |
+| published     |  日记发布时间 |
+| updated   |      日记最近更新时间 |
+| url         |    日记URL |
+| isPublic      |  是否公开 |
+| isReplyEnabled  |是否允许回复 |

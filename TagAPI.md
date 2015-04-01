@@ -1,0 +1,33 @@
+# 介绍 #
+标签API的方法有2个
+| getForSubject | 某个书籍、电影、音乐中标记最多的标签 |
+|:--------------|:-------------------------------------------------------|
+| getForUser | 用户对书籍、电影、音乐标记的所有标签 |
+
+# 示例 #
+```
+// 初始化service
+var service = $.douban({ key: apiKey, secret: apiSecret });
+service.login({ key: accessKey, secret: accessSecret });
+
+// 获取海角七号的第6个标签
+tags = service.tag.getForSubject('http://api.douban.com/movie/subject/3158990', 5, 1);
+
+// 弹出范逸臣
+tag = tags.entries[0];
+alert(tag.title);
+
+```
+更多示例可以参考测试 [test.js](http://github.com/wuyuntao/jquery-douban/tree/master/tests%2Ftests.js) 的 "test tag api"部分
+
+# 标签类 #
+上面的示例中，API返回的是一个标签类（Tag）。它定义了豆瓣标签的信息，可以通过下面的命令创建，其中json为豆瓣返回的gdata json feed
+```
+var tag = $.douban('tag', json);
+```
+Tag类有下面这些属性
+| all | 属性列表 |
+|:----|:-------------|
+| id | 标签ID |
+| name | 标签名 |
+| count | 标签被使用的次数 |

@@ -1,0 +1,44 @@
+# 介绍 #
+豆瓣的收藏API共有5个，分别是
+| get |            获取收藏信息 |
+|:----|:------------------------------|
+| getForUser |     获取用户收藏信息 |
+| add |            添加收藏 |
+| update |         更新收藏信息 |
+| remove |         删除收藏 |
+
+# 示例 #
+
+```
+// 初始化service
+var service = $.douban({ key: apiKey, secret: apiSecret });
+service.login({ key: accessKey, secret: accessSecret });
+
+// 获取用户的最近的10张音乐收藏
+var musicCollection = service.collection.getForUser('wyt', 0, 10, null, 'music');
+
+// 删除这10张收藏
+$.each(musicCollection, function() {
+    service.collection.remove(this);
+});
+```
+
+更多示例可以参考测试 [tests.js](http://github.com/wuyuntao/jquery-douban/tree/master/tests%2Ftests.js) 的 "test collection api"部分
+
+# 收藏类 #
+收藏类（Collection）定义了豆瓣用户的收藏信息，可以通过下面的命令创建，其中json为豆瓣返回的gdata json feed
+```
+var collection = $.douban('collection', json);
+```
+Collection类有下面这些属性
+| all | 属性列表 |
+|:----|:-------------|
+| id |             收藏ID |
+| title |          收藏标题 |
+| author |         收藏者，User object |
+| subject | 收藏条目，Book, Music or Movie object |
+| content |        收藏评论 |
+| updated |        收藏最近更新时间 |
+| status |         收藏状态，查表可去：http://tinyurl.com/59rqm2 |
+| tags |           收藏用TAG |
+| rating |         收藏评分 |

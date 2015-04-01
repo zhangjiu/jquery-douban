@@ -1,0 +1,41 @@
+# 介绍 #
+豆瓣的用户API共有5个，分别是
+| get | 获取用户信息 |
+|:----|:-------------------|
+| search | 搜索用户 |
+| current | 获取当前授权用户信息 |
+| friends | 获取用户朋友 |
+| contacts | 获取用户关注的人 |
+
+# 示例 #
+
+```
+// 初始化service
+var service = $.douban({ key: apiKey, secret: apiSecret });
+service.login({ key: accessKey, secret: accessSecret });
+
+// 获取用户资料
+var ahbei = service.user.get('ahbei');
+
+// 弹出ahbei的昵称“阿北”
+alert(ahbei.screenName);
+```
+
+更多示例可以参考测试 [test.js](http://github.com/wuyuntao/jquery-douban/tree/master/tests%2Ftests.js) 的 "test user api"部分
+
+# 用户类 #
+上面的示例中，API返回的是一个用户类（User）。它定义了豆瓣用户的档案，可以通过下面的命令创建，其中json为豆瓣返回的gdata json feed
+```
+var user = $.douban('user', json);
+```
+User类有下面这些属性
+| all | 属性列表 |
+|:----|:-------------|
+| id | 用户ID |
+| userName | 用户名 |
+| screenName | 昵称 |
+| location | 常居地 |
+| blog | 网志主页 |
+| intro | 自我介绍 |
+| url | 豆瓣主页 |
+| imageUrl | 头像 |

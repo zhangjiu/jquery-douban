@@ -1,0 +1,19 @@
+# 示例 #
+
+```
+// 初始化service
+var service = $.douban({ apiKey: 'blah', apiSecret: 'blah' });
+
+// 获取未授权的request token
+var requestToken = service.getRequestToken();
+
+// 用request token获取授权页面
+var authorizationUrl = service.getAuthorizationUrl(requestToken, 'http://blog.luliban.com');
+// 让用户去authorizationUrl页面进行认证。。。
+
+// 用已授权的request token换取access token
+var accessToken = service.getAccessToken(requestToken);
+
+// 用户已授权，弹出true
+alert(service.isAuthenticated());
+```

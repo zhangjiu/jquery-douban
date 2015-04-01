@@ -1,0 +1,40 @@
+### 什么是jQuery Douban ###
+jQuery Douban 是一个简化豆瓣 API 调用和 GData JSON 分析的 jQuery 插件，支持 OAuth 授权认证和各种豆瓣数据读写操作的功能。目前支持的API有用户、条目、收藏、评论、广播、日记、推荐和标签 API，部分支持同城活动的 API。
+
+### 什么时候使用jQuery Douban ###
+  * 你正好在用 jQuery
+  * 你正好想从客户端调用豆瓣 API，而不是从服务器
+  * 或者你正在为豆瓣编写 GreaseMonkey 脚本
+
+### 为什么不直接使用豆瓣API ###
+  * 更喜欢 jQuery 风格的代码
+  * 可以和有跨域超能力 Javascript 库一起使用，比如 Gears
+  * 看到 {"$t":"9787543632608","@name":"isbn13"} 风格的JSON 会头晕
+
+### 怎样使用jQuery Douban ###
+示范添加一条广播先。
+
+jQuery Douban 依赖于 jquery，oauth 和 sha1 三个 js 库，所以先要导入这三个 js 文件。
+```
+<script type="text/javascript" src="/scripts/jquery.js" ></script>
+<script type="text/javascript" src="/scripts/sha1.js" ></script>
+<script type="text/javascript" src="/scripts/oauth.js" ></script>
+<script type="text/javascript" src="/scripts/jquery.douban.js" ></script>
+```
+
+然后可以添加广播了
+
+```
+// 创建豆瓣服务实例
+var service = $.douban({ key: "apiKey", secret: "apiSecret" });
+// 登录豆瓣帐户
+var login = service.login({ key: "accessKey", secret: "accessSecret"});
+if (login) {
+    // 添加一条广播
+    var miniblog = service.miniblog.add({ content: "添加一条广播" });
+    // 弹出“添加成功：添加一条广播”
+    alert("添加成功：" + miniblog.content);
+    // 删除一条广播
+    service.miniblog.remove(miniblog);
+}
+```
